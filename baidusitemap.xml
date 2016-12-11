@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>http://code.andyadc.com/2016/12/11/Hexo-Basic/</loc>
+    <lastmod>2016-12-11T12:22:03.656Z</lastmod>
+    <data>
+        <display>
+        <title>使用 Github 空间搭建 Hexo 技术博客--安装篇</title>
+        <pubTime>2016-12-11T10:10:07.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>Git</tag>
+         
+        <tag>Github</tag>
+         
+        <tag>Node.js</tag>
+         
+         
+           
+             
+              <breadCrumb title="Hexo" url="http://code.andyadc.com/categories/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://code.andyadc.com/2016/12/10/hello-world/</loc>
     <lastmod>2016-12-10T00:34:51.006Z</lastmod>
     <data>
