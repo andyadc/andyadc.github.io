@@ -192,7 +192,7 @@
 </ul>
 </li>
 <li>提交成功效果如下：<ul>
-<li><img src="http://andyadc-image.oss-cn-shanghai.aliyuncs.com/blog-hexo-image/hexo-git-deploy.png" alt="提交成功"></li>
+<li><img src="http://andyadc-image.oss-cn-shanghai.aliyuncs.com/blog-hexo-image/hexo-git-deploy-success.png" alt="提交成功"></li>
 </ul>
 </li>
 <li>访问服务器地址进行检查：<a href="http://andyadc.github.io" target="_blank" rel="external">http://andyadc.github.io</a>，效果如下<ul>
