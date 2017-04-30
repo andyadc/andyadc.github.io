@@ -326,6 +326,26 @@
 <li>SEO优化：<code>npm install hexo-generator-seo-friendly-sitemap --save</code></li>
 <li>搜索支持，需要主题有对应的设置：<code>npm install hexo-generator-search --save</code></li>
 </ul>]]></content>
+      
+        <categories>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Git </tag>
+            
+            <tag> Github </tag>
+            
+            <tag> Node.js </tag>
+            
+        </tags>
+        
     </entry>
     
   
