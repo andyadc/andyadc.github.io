@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>http://code.andyadc.com/2017/05/13/mysql-utf8mb4/</loc>
+    <lastmod>2017-05-13T04:03:24.828Z</lastmod>
+    <data>
+        <display>
+        <title>MySQL-更改MySQL默认编码为utf8mb4</title>
+        <pubTime>2017-05-12T16:00:00.000Z</pubTime>
+        
+        <tag>MySQL</tag>
+         
+        <tag>Database</tag>
+         
+         
+           
+             
+              <breadCrumb title="MySQL" url="http://code.andyadc.com/categories/MySQL/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://code.andyadc.com/2017/04/30/java-jvm-gc/</loc>
     <lastmod>2017-04-30T11:57:10.851Z</lastmod>
     <data>
