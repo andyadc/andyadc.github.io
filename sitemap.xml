@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://code.andyadc.com/2017/05/13/docker-ce-install/</loc>
+    
+    <lastmod>2017-05-13T08:17:53.986Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://code.andyadc.com/2017/05/13/mysql-utf8mb4/</loc>
     
     <lastmod>2017-05-13T04:03:24.828Z</lastmod>

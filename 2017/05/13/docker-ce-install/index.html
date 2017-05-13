@@ -13,12 +13,17 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Andy Code">
-<meta property="og:url" content="http://code.andyadc.com/tags/Hexo/index.html">
+<meta name="description" content="CentOS下卸载与重新安装最新版本docker-ce">
+<meta name="keywords" content="Docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Docker-CentOS下安装Docker">
+<meta property="og:url" content="http://code.andyadc.com/2017/05/13/docker-ce-install/index.html">
 <meta property="og:site_name" content="Andy Code">
+<meta property="og:description" content="CentOS下卸载与重新安装最新版本docker-ce">
+<meta property="og:updated_time" content="2017-05-13T08:17:53.986Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Andy Code">
+<meta name="twitter:title" content="Docker-CentOS下安装Docker">
+<meta name="twitter:description" content="CentOS下卸载与重新安装最新版本docker-ce">
 
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
@@ -48,7 +53,7 @@
 <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
 
 
-<title>Tag: Hexo | Andy Code</title>
+<title>Docker-CentOS下安装Docker | Andy Code</title>
 
 <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
 <script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
@@ -58,9 +63,9 @@
         fancybox: true,
         animate: true,
         isHome: false,
-        isPost: false,
+        isPost: true,
         isArchive: false,
-        isTag: true,
+        isTag: false,
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
@@ -253,38 +258,205 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我">
 </nav>
-      <div class="body-wrap"><section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-          <div class="article-meta">
-              <a href="/2016/12/11/Hexo-Basic/" class="archive-article-date">
-      <time datetime="2016-12-11T10:10:07.000Z" itemprop="datePublished">12-11</time>
+      <div class="body-wrap"><article id="post-docker-ce-install" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/05/13/docker-ce-install/" class="article-date">
+      <time datetime="2017-05-12T16:00:00.000Z" itemprop="datePublished">2017-05-13</time>
 </a>
-        </div>
-         <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/11/Hexo-Basic/">使用 Github 空间搭建 Hexo 技术博客</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy">
+    
+    
+      <header class="article-header">
+        <h1 class="article-title" itemprop="name">
+      Docker-CentOS下安装Docker
     </h1>
-        <div class="article-info info-on-archive">
-          <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Hexo/">Hexo</a>
+      </header>
+      
+      <div class="article-info article-info-post">
+        <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Docker/">Docker</a>
     </div>
-          <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Git/">Git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Github/">Github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-js/">Node.js</a></li></ul>
+        <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Docker/">Docker</a></li></ul>
     </div>
-        </div>
         <div class="clearfix"></div>
-    </header>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h3 id="OS-requirements"><a href="#OS-requirements" class="headerlink" title="OS requirements"></a>OS requirements</h3><p>To install Docker, you need the 64-bit version of CentOS 7.</p>
+<h3 id="Uninstall-old-versions"><a href="#Uninstall-old-versions" class="headerlink" title="Uninstall old versions"></a>Uninstall old versions</h3><p>Older versions of Docker were called <code>docker</code> or <code>docker-engine</code>. If these are installed, uninstall them, along with associated dependencies.</p>
+<p>The contents of <code>/var/lib/docker/</code>, including images, containers, volumes, and networks, should be deleted.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ yum list installed | grep docker</div><div class="line">$ sudo yum remove docker \</div><div class="line">                  docker-common \</div><div class="line">                  container-selinux \</div><div class="line">                  docker-selinux \</div><div class="line">                  docker-engine</div><div class="line"></div><div class="line">$ rm -rf /var/lib/docker</div></pre></td></tr></table></figure>
+<h2 id="Install-Docker"><a href="#Install-Docker" class="headerlink" title="Install Docker"></a>Install Docker</h2><h3 id="Install-using-the-repository"><a href="#Install-using-the-repository" class="headerlink" title="Install using the repository"></a>Install using the repository</h3><blockquote>
+<ol>
+<li><p>Set up the repository<br>Set up the Docker CE repository on CentOS:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ sudo yum install -y yum-utils</div><div class="line"></div><div class="line">$ sudo yum-config-manager \</div><div class="line">    --add-repo \</div><div class="line">    https://download.docker.com/linux/centos/docker-ce.repo</div><div class="line"></div><div class="line">$ sudo yum makecache fast</div></pre></td></tr></table></figure>
+</li>
+<li><p>Get Docker CE<br>Install the latest version of Docker CE on CentOS:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo yum -y install docker-ce</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<p>Start Docker:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo systemctl start docker</div></pre></td></tr></table></figure></p>
+<blockquote>
+<ol>
+<li>Test your Docker CE installation<br>Test your installation:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo docker run hello-world</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<h3 id="Uninstall-Docker"><a href="#Uninstall-Docker" class="headerlink" title="Uninstall Docker"></a>Uninstall Docker</h3><blockquote>
+<ol>
+<li>Uninstall the Docker package:</li>
+</ol>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Docker Edition</th>
+<th style="text-align:center">Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Docker CE</td>
+<td style="text-align:center"><code>sudo yum remove docker-ce</code></td>
+</tr>
+<tr>
+<td>Docker EE</td>
+<td style="text-align:center"><code>sudo yum remove docker-ce</code></td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<ol>
+<li>Images, containers, volumes, or customized configuration files on your host are not automatically removed. To delete all images, containers, and volumes:<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo rm -rf /var/lib/docker</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<p>You must delete any edited configuration files manually.</p>
+      
+    </div>
+    
   </div>
+  
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/05/13/docker-ce-install/">Docker-CentOS下安装Docker</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Andy An</a></p>
+        <p><span>发布时间:</span>2017-05-13, 00:00:00</p>
+        <p><span>最后更新:</span>2017-05-13, 16:17:53</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/05/13/docker-ce-install/" title="Docker-CentOS下安装Docker">http://code.andyadc.com/2017/05/13/docker-ce-install/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://code.andyadc.com/2017/05/13/docker-ce-install/　　作者: Andy An" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target="_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2017/05/13/mysql-utf8mb4/">
+                    MySQL-更改MySQL默认编码为utf8mb4
+                </a>
+            </div>
+        
+    </nav>
+  
 </article>
-  
-  
-    </div></section></div>
+<div id="toc" class="toc-article">
+        <strong class="toc-title">文章目录</strong>
+        
+            <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#OS-requirements"><span class="toc-number">1.</span> <span class="toc-text">OS requirements</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Uninstall-old-versions"><span class="toc-number">2.</span> <span class="toc-text">Uninstall old versions</span></a></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#Install-Docker"><span class="toc-number"></span> <span class="toc-text">Install Docker</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Install-using-the-repository"><span class="toc-number">1.</span> <span class="toc-text">Install using the repository</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Uninstall-Docker"><span class="toc-number">2.</span> <span class="toc-text">Uninstall Docker</span></a></li></ol>
+        
+    </li></div>
+    <style>
+        .left-col .switch-btn,
+        .left-col .switch-area {
+            display: none;
+        }
+        .toc-level-3 i,
+        .toc-level-3 ol {
+            display: none !important;
+        }
+    </style>
+
+    <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+    <script>
+        yiliaConfig.toc = ["隐藏目录", "显示目录", !!"false"];
+    </script>
+
+
+    <div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Docker-CentOS下安装Docker　| Andy Code　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+    
+        <section class="youyan" id="comments">
+    <script>
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = 'http://v2.uyan.cc/code/uyan.js?uid=2121447';
+            (d.head || d.body).appendChild(s);
+        }
+    </script>
+    <script> loadComment(); </script>
+    <div id="uyan_frame"></div>
+</section>
+    
+
+
+<div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2017/05/13/mysql-utf8mb4/" title="下一篇: MySQL-更改MySQL默认编码为utf8mb4">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/05/13/docker-ce-install/">Docker-CentOS下安装Docker</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/05/13/mysql-utf8mb4/">MySQL-更改MySQL默认编码为utf8mb4</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/04/30/java-jvm-gc/">Java-JVM系列 java GC</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/11/Hexo-Basic/">使用 Github 空间搭建 Hexo 技术博客</a></li></ul>
+
+
+    <script>
+        
+    </script></div>
       <footer id="footer">
     <div class="outer">
         <div id="footer-info">
