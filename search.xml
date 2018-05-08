@@ -6,8 +6,7 @@
     <entry>
       <title><![CDATA[JVM 线上问题快速排查]]></title>
       <url>http://blog.andyadc.com/2017/09/29/JVM-online-problem/</url>
-      <content type="html"><![CDATA[<h2 id="找到最耗CPU的线程"><a href="#找到最耗CPU的线程" class="headerlink" title="找到最耗CPU的线程"></a>找到最耗CPU的线程</h2><hr>
-<h3 id="步骤一-找到最耗CPU的进程"><a href="#步骤一-找到最耗CPU的进程" class="headerlink" title="步骤一:找到最耗CPU的进程"></a>步骤一:找到最耗CPU的进程</h3><ul>
+      <content type="html"><![CDATA[<h2 id="找到最耗CPU的线程"><a href="#找到最耗CPU的线程" class="headerlink" title="找到最耗CPU的线程"></a>找到最耗CPU的线程</h2><h3 id="步骤一-找到最耗CPU的进程"><a href="#步骤一-找到最耗CPU的进程" class="headerlink" title="步骤一:找到最耗CPU的进程"></a>步骤一:找到最耗CPU的进程</h3><ul>
 <li>执行top -c, 显示进程运行信息列表</li>
 <li>输入 P(大写p), 进程按照CPU使用率排序</li>
 </ul>
